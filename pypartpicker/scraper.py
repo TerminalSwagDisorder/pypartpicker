@@ -358,8 +358,7 @@ class Scraper:
             specs=specs,
             price_list=prices,
             price=price,
-            rating=soup.find(class_="actionBox actionBox__ratings").find(
-                class_="product--rating list-unstyled").get_text().strip('\n').strip().strip("()"),
+            rating=None, #Previous code raised AttributeError on items without a rating
             reviews=reviews,
             compatible_parts=compatible_parts,
             type=soup.find(class_="breadcrumb").find(class_="list-unstyled").find("li").get_text()
